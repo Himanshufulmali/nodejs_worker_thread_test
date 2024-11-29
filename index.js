@@ -7,7 +7,7 @@ app.get("/non-blocking",(req,res) => {
     res.status(200).send("This is non blocking so response will be quick");
 });
 
-// code for two worker as i have two cores
+// code for two worker as i want to use two cores
 function createWorker(){
     return new Promise((resolve, reject) => {
         const worker = new Worker("./two-workers.js", {
